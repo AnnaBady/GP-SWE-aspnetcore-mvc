@@ -1,0 +1,81 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+@inject RoleManager<IdentityRole> roleManager
+
+    @*
+        <nav id="navbar" class="navbar">*@
+       @*     <ul>*@
+            @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+            {
+            <li>
+                <a class="nav-link scrollto" href="/Admin/ManageCourses">Manage Courses</a>
+            </li>
+            <li>
+                <a class="nav-link scrollto" href="/Admin/News">News</a>
+            </li>
+            <li>
+                <a class="nav-link scrollto" href="/Admin/GStudentList">GraduationStudent</a>
+            </li>
+            <li>
+                <a class="nav-link scrollto" href="/Admin/AddUsers">Add Users</a>
+            </li>
+            <li>
+            <a  class="nav-link scrollto" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Your Profile</a>
+            </li>
+            <li>
+            <form  class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+               <button  type="submit" class="nav-link btn btn-link text-dark scrollto">Logout</button>
+            </form>
+            </li>
+            }
+            else if (SignInManager.IsSignedIn(User) && User.IsInRole("Student"))
+            {
+            <li>
+            <a  class="nav-link scrollto" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Your Profile</a>
+            </li>
+            <li><a class="nav-link scrollto" href="/Student/RegisterCourses">Register Courses</a></li>
+            <li><a class="nav-link scrollto" href="/Student/ShowRegisterCourses">Show Register Courses</a></li>
+            <li><a class="nav-link scrollto" href="/Student/TablesAndTimes">Tables and Times</a></li>
+@*            <li><a class="nav-link scrollto" href="/Student/Exam_Info">Exam_Info</a></li>
+*@            <li>
+            <form  class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+               <button  type="submit" class="nav-link btn btn-link text-dark">Logout</button>
+            </form>
+            </li>
+            }
+            else if (SignInManager.IsSignedIn(User) && User.IsInRole("Doctor"))
+            {
+                <li><a class="nav-link scrollto" href="/Doctor/AddCoursesD">Add Courses</a></li>
+                <li><a class="nav-link scrollto" href="/Doctor/Index">View Courses</a></li>
+                <li><a class="nav-link scrollto" href="/Doctor/CreateQRCode">QRCode</a></li>
+                <li><a class="nav-link scrollto" href="/Doctor/CreateQuiz">Create Quiz</a></li>
+
+            <li>
+            <a  class="nav-link scrollto" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Your Profile</a>
+            </li>
+            <li>
+            <form  class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+               <button  type="submit" class="nav-link btn btn-link text-dark">Logout</button>
+            </form>
+            </li> 
+            }
+            else if (SignInManager.IsSignedIn(User) && User.IsInRole("Engineer"))
+            {
+            <li>
+            <a  class="nav-link scrollto" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Your Profile</a>
+            </li>
+            <li>
+            <form  class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+               <button  type="submit" class="nav-link btn btn-link text-dark">Logout</button>
+            </form>
+            </li>
+            }
+            else
+            {  
+            <li><a class="nav-link scrollto" href="/Home/Index">Home</a></li>
+            <li><a class="nav-link scrollto" href="#">About</a></li>
+            <li><a class="nav-link scrollto" href="#">News</a></li>
+            <li><a class="nav-link scrollto" href="#">Contact Us</a></li>
+            <li><a class="nav-link scrollto" asp-area="Identity" asp-page="/Account/Login">Login</a></li>
+            }

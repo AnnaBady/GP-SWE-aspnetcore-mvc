@@ -1,0 +1,25 @@
+﻿@model IList<WEBGPApps.Controllers.StudentController.Doc_Cor>
+
+<div class="BG">
+    <div class="container">
+        <div class="registerstyle wow slideInDown">
+            <form action="/student/RegisterCourses" method="post">
+                
+                <label class="labst">Courses</label>
+                <br />
+                <br />
+                <select name="cours" class="selectstyle col-md-4">
+
+                        @foreach(var item in Model)
+                        {
+                            <option value="@item.Course.CoursesId" >@item.Course.CoursesName @item.Course.CodeCourse  (@item.user.FirstName @item.user.LastName)</option>
+                        }
+                    
+                </select>
+                <br />
+                <br />
+                <input type="submit" value="send" class="btn btn-light"/>
+            </form>
+        </div>
+    </div>
+</div>

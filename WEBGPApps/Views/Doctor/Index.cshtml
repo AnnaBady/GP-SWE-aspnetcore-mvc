@@ -1,0 +1,24 @@
+﻿@model IList<WEBGPApps.Controllers.DoctorController.Doc_Cor>
+@{
+    ViewData["Title"] = "Index";
+}
+    
+<div class="BG">
+    <div class="al">
+        <div class="four-boxes wow slideInDown">
+            @foreach(var item in Model)
+                {
+            <div class="box text-center">
+                <h4>@item.Course.CoursesName</h4>
+                <h4>@item.user.FirstName</h4>
+                <div class="reg">
+                  <button class="btn btn-primary"><a style="color:white;" href="/Doctor/MyStudents/@item.Course.CoursesId">MyStudents</a></button>
+                </div>
+                <br/>
+                <div class="reg" style="padding-bottom:20px;">
+                  <button class="btn btn-primary"><a style="color:white;" href="/Doctor/ViewMaterial">View Matrial</a></button>
+                </div>
+            </div>}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+﻿@using WEBGPApps.Models;
+@model News
+<div class="BG4">
+    <div class="container">
+        <div class="N wow slideInDown">
+            <h1>you can insert news from this form</h1>
+            <div class="col-lg-8" style=" border:2px ridge #fff;border-radius:25px;margin:30px; padding:40px;">
+              <form asp-action="Save_News" role="form" >
+                  <input type="text" asp-for="Headline" class="form-control" placeholder="Headline" required="">
+                  <br />
+                  <input type="text" asp-for="Text" class="form-control" placeholder="Text" required="">
+                  <br />
+                  <textarea class="form-control" asp-for="Des" rows="4" placeholder="Descrption" onkeydown='this.style.height = this.scrollHeight + "px"' required=""></textarea>
+                  <br />
+                  <button class="btn btn-light" type="submit">Submit</button>
+              </form>
+            </div>
+        </div>
+    <div>
+</div>

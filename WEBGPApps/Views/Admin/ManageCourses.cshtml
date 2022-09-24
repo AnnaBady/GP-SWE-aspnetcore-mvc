@@ -1,0 +1,39 @@
+﻿@using WEBGPApps.Models;
+@model Courses
+
+<div class="BG3">
+    <div class="container">
+        <div class="MC wow slideInDown">
+            <h1>Can manage your courses from this form</h1>
+            <br />
+            <br />
+            <div class="asx col-md-8">
+              <form asp-action="Save_ManageCourses" role="form" class="col-md-10" >
+                <div class="row">
+                  <div class="col-md-6 form-group">
+                    <input type="text" asp-for="CodeCourse" class="form-control" placeholder="Code Course" required="">
+                  </div>
+                  <div class="col-md-6 form-group">
+                    <input type="text" asp-for="CoursesName" class="form-control" placeholder="Name Course" required="">
+                  </div>
+                </div>
+                <br />
+                <div class="row">
+                  <div class="col-md-6 form-group">
+                    <input type="text" asp-for="HoursOfCourse" class="form-control" placeholder="hour of Course" required="">
+                  </div>
+                  <div class="col-md-6 form-group">
+                    <select asp-for="SemesterType" class="form-control" autocomplete="username" aria-required="true">
+                     <option value="Semester1" >Semester 1</option>
+                     <option value="Semester2">Semester 2</option>
+                   </select> 
+                   <span asp-validation-for="SemesterType" class="text-danger"></span>
+                  </div>
+                </div>
+                <br />
+                <div class="text-center" style="margin-bottom:20px;"><button class="btn btn-light" type="submit">Submit</button></div>
+              </form>
+            </div>
+        </div>
+    </div>
+</div>

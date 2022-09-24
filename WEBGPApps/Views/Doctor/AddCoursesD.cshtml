@@ -1,0 +1,23 @@
+﻿@using WEBGPApps.Models;
+@model List<WEBGPApps.Models.Courses>
+<div class="BG">
+    <div class="al">
+        <div class="container wow slideInDown">
+            <h1>Add Courses</h1>
+            <br><br>
+            <div>
+            	<form action="/Doctor/Save_CoursesD"  method="post">
+                    <label style="color:white;" for="Courses">Select a Course 1:</label>
+                    <select name="Courses" id="cars">
+                        @foreach (var item in Model){
+                        <option value="@item.CoursesId">@item.CoursesName</option>
+                        }
+                    </select>
+                    <br />
+                    <br />
+                    <input class="btn btn-light" type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,34 @@
+﻿@model IList<WEBGPApps.Controllers.StudentController.Doc_Cor>
+<div class="BG">
+    <div class="container">
+        <div  class="wow slideInDown" style="padding-top:35px; text-align:center;">
+            <h1 style="color:white">Show Register Courses.</h1>
+            <br />
+            <div class="showstyle">
+                <table class="tablestyle">
+                    <thead>
+                        <tr>
+                            <th>CoursesName</th>
+                            <th>CodeCourse</th>
+                            <th>Hours</th>
+                            <th>FirstName</th>
+                            <th>LastName</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                        <tr>
+                            <td>@item.Course.CoursesName</td>
+                            <td>@item.Course.CodeCourse</td>
+                            <td>@item.Course.HoursOfCourse</td>
+                            <td>@item.user.FirstName</td>
+                            <td>@item.user.LastName</td>
+                        </tr>
+                        }
+                        </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+﻿@model WEBGPApps.Models.QRCodeModel
+
+@{
+    ViewData["Title"] = "www.compilemode.com";
+}
+<div class="BG7">
+    <div class="container wow slideInDown">
+        <div style="padding-top:50px; text-align:-webkit-center">
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="CreateQRCode">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <input type="submit" value="Generate QR Code" class="btn btn-primary text-center" />
+            </div>
+            <div class="form-group col-md-4">
+                <img src="@ViewBag.QrCodeUri" class="img-thumbnail" />
+            </div>
+        </form>
+    </div>
+</div>
+</div></div></div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,38 @@
+﻿@model IList<WEBGPApps.Models.ApplicationUser>
+@{
+    ViewData["Title"] = "MyStudents";
+}
+
+<div class="BG">
+    <div class="container" style="padding-top:35px;">
+        <table class="table table-striped wow slideInDown">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Mid mark</th>
+                    <th>mark_practical</th>
+                    <th>mark_Final</th>
+                    <th></th>
+                </tr>
+            </thead>
+            @foreach (var item  in Model)
+            {
+            <tbody style="color:white;">
+                <tr>
+                    <td>@item.UserName</td>
+                    <td>@item.FirstName</td>
+                    <td>@item.LastName</td>
+                    <td>@item.Email</td>
+                    <td><input type="number" name="mark_mid" value="0" /></td>
+                    <td><input type="number" name="mark_practical" value="0" /></td>
+                    <td><input type="number" name="mark_Final" value="0" /></td>
+                    <td><input type="submit" value="send"/></td>
+                </tr>
+            </tbody>
+            }
+        </table>
+     </div>
+</div>

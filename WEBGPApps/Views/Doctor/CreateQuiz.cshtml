@@ -1,0 +1,35 @@
+﻿@model WEBGPApps.Models.Quiz
+<div class="BG1">
+    <div class="als">
+        <div class="container wow slideInDown">
+            <div class="col-md-4">
+                <form asp-action="Save_Quiz">
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                    <div class="form-group">
+                        <label style="color:white;" asp-for="Q1" class="control-label"></label>
+                        <input asp-for="Q1" class="form-control" />
+                        <span asp-validation-for="Q1" class="text-danger"></span>
+                 <select asp-for="Ans1" class="form-control" autocomplete="username" aria-required="true">
+                   <option value="True" >True</option>
+                   <option value="False">False</option>
+                 </select>                
+                 <span asp-validation-for="Ans1" class="text-danger"></span>
+                  <div asp-validation-summary="All" class="text-danger"></div>
+                    <div class="form-group">
+                        <label style="color:white;" asp-for="Q2" class="control-label"></label>
+                        <input asp-for="Q2" class="form-control" />
+                        <span asp-validation-for="Q2" class="text-danger"></span>
+                 <select asp-for="Ans2" class="form-control" autocomplete="username" aria-required="true">
+                   <option value="True" >True</option>
+                   <option value="False">False</option>
+                 </select>                
+                 <span asp-validation-for="Ans2" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Generate QR Code" class="btn btn-primary text-center" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

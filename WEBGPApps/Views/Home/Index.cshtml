@@ -1,0 +1,95 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@using WEBGPApps.Models;
+@model List<WEBGPApps.Models.News>
+<div class="homeend">
+            <div class="overlay"></div>
+    <div class="welcome-msg">
+        <div class="wow jackInTheBox" data-wow-delay=".4s">
+            <h1>Software Engineering</h1>
+            <p>Department</p>
+            <div class="buttons">
+                <div class="wow rollIn" data-wow-delay="0.5s">
+                     <a href="#about-us">See More</a>
+                </div> 
+            </div>
+        </div>
+    </div>    
+</div>
+<div id="about-us" class="about box">
+    <div class="container">
+        <h1 class="wow bounceIn" data-wow-iteration="3">We are an awesome agency</h1>
+        <div class="row">
+            <div class="item col-12 col-sm-6 col-md-3 wow bounceIn" data-wow-offset="10" data-wow-delay=".3s">
+                <div class="icon-container">
+                    <i class="far fa-edit"></i>
+                </div>
+                <h3>The College message</h3>
+                <p>The college is working on preparing a distinguished graduate who is able to compete in the local and regional labor market in the fields of computers and information</p>
+            </div>
+            <div class="item col-12 col-sm-6 col-md-3 wow bounceIn" data-wow-offset="10" data-wow-delay=".6s">
+                <div class="icon-container">
+                    <i class="fab fa-searchengin"></i>
+                </div>
+                <h3>The College Vision</h3>
+                <p>The Faculty of Computers and Information at Helwan University seeks scientific, practical and research excellence in the field of computers and information locally and regionally.</p>
+            </div>
+            <div class="item col-12 col-sm-6 col-md-3 wow bounceIn" data-wow-offset="10" data-wow-delay=".9s">
+                <div class="icon-container">
+                    <i class="fas fa-home"></i>
+                </div>
+                <h3>The software engineering program</h3>
+                <p>The software engineering program has been established in the college since 2006 and is offered by the Department of Information Systems</p>
+            </div>
+            <div class="item col-12 col-sm-6 col-md-3 wow bounceIn" data-wow-offset="10" data-wow-delay="1.2s">
+                <div class="icon-container">
+                    <i class="far fa-comment"></i>
+                </div>
+                <h3>Contact Us</h3>
+                <p>You Can send massage to Admin In the Department and resieve confirm </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="testemonials box" id="testemonials">
+        <!-- Slider main container -->
+        <div class="swiper-container">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                @foreach (var item in Model)
+{
+                <div class="swiper-slide">
+                    <h1>@item.Headline</h1>
+                    <h3 style="color:#117FCF;">@item.Text</h3>
+                    <h4>@item.Des</h4>
+                </div>
+}
+             </div>
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+</div>
+
+<div class="contact text-center box" id="contact-us">
+        <div class="container">
+            <div class="contact-container">
+                <h2 >Contact <span class="main-color">Us</span></h2>
+                <p>You can let your commet about your opinion </p>
+                <form class="wow slideInDown">
+                    <input type="email" name="mail" placeholder="Please Enter Your Email">
+                    <input type="text" name="subject" placeholder="Please Enter Your Subject">
+                    
+                    <!-- Fekrett Ahmed Hesham -->
+                    <textarea placeholder="Please Enter Your Message" onkeydown='this.style.height = this.scrollHeight + "px"'></textarea>
+                    <div class="info">
+                        <button class="upper">Send</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>    
